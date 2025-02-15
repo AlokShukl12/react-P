@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import {motion} from "framer-motion";
 const ToggleleButton= ({setOpen}) =>{
     return( <button onClick={() => setOpen((prev) => !prev)}>

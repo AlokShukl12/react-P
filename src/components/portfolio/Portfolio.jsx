@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import "./portfolio.scss";
 import { motion,useScroll,useSpring, useTransform} from "framer-motion";
 import { useRef} from "react";
@@ -41,6 +42,7 @@ const Single = ({item}) => {
         <div className="container">
             <div className="wrapper">
                 <div className="imageContainer" ref={ref}>
+                 
                     <img src={item.img} alt=""/>
                 </div>
            

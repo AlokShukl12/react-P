@@ -1,4 +1,6 @@
-import { animate } from "framer-motion";
+import {useGSAP} from '@gsap/react'
+import gsap from 'gsap'
+import { useRef} from 'react'
 import {motion} from "framer-motion";
 import "./hero.scss";
 const textVariants = {
@@ -40,13 +42,25 @@ const sliderVariants = {
    
 };
 const Hero = () =>{
+    const H = useRef();
+    useGSAP(() =>{
+
+        gsap.to(H.current,{
+            //   x:100,
+              y:200,
+            // yoyo:true,
+              repeat:-1
+            
+            })
+    })
+   
     return(
         <div className="hero">
             <div className="wrapper">
-            <motion.div className="textContainer" variants={textVariants}
+            <motion.div  className="textContainer" variants={textVariants}
             initial="initial" animate="animate">
-                <motion.h2 variants={textVariants}>ALOK SHUKLA</motion.h2>
-                <motion.h1 variants={textVariants}>Web developer and UI designer</motion.h1>
+                <motion.h2  variants={textVariants}>ALOK SHUKLA</motion.h2>
+                <motion.h1  variants={textVariants} >Web developer and UI designer</motion.h1>
                 <motion.div variants={textVariants} className="buttons">
                     <motion.button variants={textVariants}>See the Latest Works</motion.button>
                     <motion.button variants={textVariants}>Contact Me</motion.button>
@@ -57,10 +71,14 @@ const Hero = () =>{
             <motion.div className="slidingTextContainer" variants={sliderVariants} initial="initial" animate="animate">
                 Writer Content Creator Influenfcer
             </motion.div> 
-            <div className="imageContainer" >
-                <img src="/hero.png" alt="" />
+            <div  ref={H} className="imageContainer " >
+                <img  src="/stars.png" alt="" />
+               
+                <img  src="/planets.png" alt="" />
+              
             </div>
         </div>
+       
     )
 };
 export default Hero;

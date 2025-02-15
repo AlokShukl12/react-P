@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import { animate,motion,useInView } from "framer-motion";
 import "./contact.scss";
 import { useRef, useState} from "react";
@@ -35,9 +36,11 @@ const Contact = () =>{
           .sendForm('service_f9fjyt9', 'template_oe6b6av', formRef.current, {
             publicKey: '-mRbtGiC7HmTHKmJz',})
           .then(
+            // eslint-disable-next-line no-unused-vars
             (result) => {
               setSuccess(true)
             },
+            // eslint-disable-next-line no-unused-vars
             (error) => {
              setError(true)
             },
